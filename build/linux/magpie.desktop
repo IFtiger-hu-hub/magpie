@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=Magpie
+Name[zh_CN]=Magpie 喜鹊
+GenericName=AI Model Router
+GenericName[zh_CN]=AI 模型路由与管理
+Comment=One place to pick every agent's model
+Comment[zh_CN]=一站式管理与路由所有 AI 编程助手的模型
+Exec=magpie %u
+Icon=magpie
+Terminal=false
+Categories=Development;
+MimeType=x-scheme-handler/magpie;
+StartupWMClass=magpie
+Keywords=ai;model;proxy;router;agent;
+Keywords[zh_CN]=ai;人工智能;模型;代理;路由;助手;

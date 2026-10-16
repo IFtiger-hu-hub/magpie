@@ -32,7 +32,7 @@ ifeq ($(shell go env GOOS),android)
   TAGS = nogui
 endif
 
-.PHONY: build cli install test test-ui app icons release release-cli release-windows release-linux clean dev dev-once
+.PHONY: build cli install test test-ui app icons release release-cli release-windows release-linux rpm clean dev dev-once
 
 build:
 	go build -tags "$(TAGS)" -trimpath -ldflags="$(LDFLAGS)" -o magpie .
@@ -117,6 +117,10 @@ release-linux:
 	@mkdir -p dist
 	@echo "  linux/$(shell go env GOARCH) (app)"
 	@go build -tags "$(TAGS)" -trimpath -ldflags="$(LDFLAGS)" -o dist/magpie-linux-$(shell go env GOARCH) .
+
+# RPM package for openSUSE (Tumbleweed / Leap) and RPM-based Linux distributions.
+rpm:
+	@VERSION="$(VERSION)" build/linux/build-rpm.sh
 
 clean:
 	rm -rf magpie magpie.exe magpie.app dist rsrc_windows_*.syso

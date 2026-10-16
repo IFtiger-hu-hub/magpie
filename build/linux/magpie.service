@@ -1,0 +1,14 @@
+[Unit]
+Description=Magpie - AI Model Router & Gateway
+Documentation=https://usemagpie.ai https://github.com/yetone/magpie
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/magpie serve
+Restart=on-failure
+RestartSec=3s
+KillMode=process
+
+[Install]
+WantedBy=default.target
